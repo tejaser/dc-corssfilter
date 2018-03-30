@@ -1,0 +1,232 @@
+[
+ {
+   "VISITS": 1,
+   "USER_ID": 15211241663925440,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Thursday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15210730542058344,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Thursday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 1
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15202596593846312,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Monday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Bing",
+   "USER_TYPE": 1
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 1520121221437487,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Tuesday",
+   "CLICK_SOURCE": "Direct",
+   "PPC_TYPE": null,
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15202876093261116,
+   "DEVICE": "MOBILE",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Monday",
+   "CLICK_SOURCE": "ORGANIC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 1
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15210442822245328,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Wednesday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 1
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15039323992028920,
+   "DEVICE": "MOBILE",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Thursday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15210730542058344,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Thursday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15202596593846312,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Monday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Bing",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15210525334495752,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Wednesday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 1
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15206124664901936,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Friday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 1
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 1520259163094866,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Monday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 1
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15172566930872560,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Monday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15211241663925440,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Thursday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 1
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15210442822245328,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Thursday",
+   "CLICK_SOURCE": "Direct",
+   "PPC_TYPE": null,
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15210525334495752,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Wednesday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 15206124664901936,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Friday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 1,
+   "USER_ID": 1520259163094866,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Monday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 2,
+   "USER_ID": 15172369675405588,
+   "DEVICE": "MOBILE",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Tuesday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": null,
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 2,
+   "USER_ID": 1520121221437487,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Tuesday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 2,
+   "USER_ID": 15210442822245328,
+   "DEVICE": "DESKTOP",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Thursday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 2,
+   "USER_ID": 15202876093261116,
+   "DEVICE": "MOBILE",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Monday",
+   "CLICK_SOURCE": "PPC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ },
+ {
+   "VISITS": 3,
+   "USER_ID": 15202876093261116,
+   "DEVICE": "MOBILE",
+   "COUNTRY_NAME": "United States",
+   "DAY": "Monday",
+   "CLICK_SOURCE": "ORGANIC",
+   "PPC_TYPE": "Google",
+   "USER_TYPE": 0
+ }
+]

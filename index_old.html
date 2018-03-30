@@ -5,14 +5,15 @@
 	<title>Interactive Report</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
 	<link rel="stylesheet" type="text/css" href="./dc.css" />
-	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-white">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="/">
-			<img src="logo.png" alt="insights">
+			<img src="lxr.png" alt="lxr">&nbsp;
+			<img src="insights.png" alt="insights">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
 		 aria-expanded="false" aria-label="Toggle navigation">
@@ -22,43 +23,36 @@
 		<div class="collapse navbar-collapse" id="navbarColor01">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Elf Cosmetics
+					<a class="nav-link" href="#">xyz eCommerce
 						<span class="sr-only">(current)</span>
 					</a>
-				</li>
-			</ul>
-			<ul class="navbar-nav my-2 my-lg-0 text-right">
-				<li class="nav-item">
-					<p class="font-weight-bold mb-0">
-						<span class="fa fa-calendar" style="color: #F58120"></span>&nbsp; March, 2018</p>
-					</b>
-					<p class="font-weight-light t">All data is based on last click by customer</p>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
 	<div class="container-fluid">
-		<div class="row mt-2">
-			<div class="col-md-3 font-weight-bold mt-lg-0 mt-3  pr-2 pl-2 pl-lg-3 mh">
-				<div class="col-12 lxr-box-shadow py-3 p-0">
-					<h4 class="font-weight-normal text-uppercase ml-3">Persona</h4>
-					<p class="font-weight-light ml-3">high-value Person your business </p>
-					<div class="text-center">
-							<img src="./lady.svg" width="180" height="180"/></br>
-							<b>Sidney</b></br>
-							<b class="font-weight-light">Age: 25-35</b></br>
-							<b>United States of America</b>
-					</div> 
-				</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p class="float-right"> &nbsp;All data is based on last click by customer</p>
+				<p class="float-right">
+					<span class="fa fa-calendar"></span> March, 2018 | </p>
 			</div>
-			<div class="col-md-3 mt-lg-0 mt-3  pr-2 pl-2 pl-lg-3 mh">
-				<div class="col-12 lxr-box-shadow py-3 p-0">
-						<div class="font-weight-bold">
-							<h4 class="font-weight-normal text-uppercase ml-3">Key Takeaways</h4>
-							<p class="font-weight-light ml-3">by high-value Person </p>
-						</div>
-					<div class="card-body">	
+
+		</div>
+		<div class="row">
+			<div class="col-md-3 text-center font-weight-bold">
+				<img src="./lady.svg" />
+				<p>Sidney</p>
+				<p>Age: 25-35</p>
+				<p>United States of America</p>
+			</div>
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-header text-center font-weight-bold">
+						Key Takeaways
+					</div>
+					<div class="card-body">
 						<p>Her monthly purchases are above $50. (Contributes up to 70% of total revenue)</p>
 						<!-- <p>She visits the website 2-3 times a month.</p> -->
 						<p>Her bag value amounts to $
@@ -70,38 +64,23 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh" >
-				<div class="col-12 lxr-box-shadow py-3 p-0" id="pie">
-					<h4 class="font-weight-normal text-uppercase ml-3">Devices</h4>
-					<p class="font-weight-light ml-3">by number of Users </p>
-					
-				</div>
+			<div class="col-md-3  text-center" id="pie">
+				<h3>Devices</h3>
+				<p>(by number of Users)</p>
 			</div>
-			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh" >
-				<div class="col-12 lxr-box-shadow py-3 p-0" id="bar">
-					<h4 class="font-weight-normal text-uppercase ml-3">Channels</h4>
-					<p class="font-weight-light ml-3">by number of Orders </p>						
-				</div>
-			</div>			
+			<div class="col-md-3 text-center" id="bar">
+				<h3>Channels</h3>
+				<p>(by number of Orders)</p>
+			</div>
 		</div>
-		<div class="row mt-3">
-			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh" >
-				<div class="col-12 lxr-box-shadow py-3 p-0" id="dow">
-					<h4 class="font-weight-normal text-uppercase ml-3">Day of Week</h4>
-					<p class="font-weight-light ml-3">by number of Orders </p>
-				</div>				
+		<div class="row">
+			<div class="col-md-6 text-center" id="dow">
+				<h3>Day of Week</h3>
+				<p>(by number of Orders)</p>
 			</div>
-			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh" >
-					<div class="col-12 lxr-box-shadow py-3 p-0" id="">
-						<h4 class="font-weight-normal text-uppercase ml-3">Hour of Day</h4>
-						<p class="font-weight-light ml-3">by number of Orders </p>
-					</div>				
-				</div>
-			<div class="col-md-6 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh"  >
-				<div class="col-12 lxr-box-shadow py-3 p-0" id="geo">
-					<h4 class="font-weight-normal text-uppercase ml-3">Geo Location</h4>
-					<p class="font-weight-light ml-3">by number of Users </p>
-				</div>
+			<div class="col-md-6 text-center" id="geo">
+				<h3>Geo Location</h3>
+				<p>(by number of Users)</p>
 			</div>
 		</div>
 
@@ -126,12 +105,14 @@
 
 
 		//new data and new graphs
-		d3.json('orders-data-3.json', function (err, data) {
+		d3.json('data/order-data.json', function (err, data) {
 			console.log(data)
 			var facts = crossfilter(data)
 			var all = facts.groupAll();
 			var userTotal = all.reduceSum(function (d) { return d.userCount; }).value();
-
+			
+			var timeCount = all.reduce(function(d){ return d.hour}).value();
+			print_filter(timeCount);
 			//device chart data
 			var pieDimension = facts.dimension(function (d) { return d.device; })
 			var pieGroup = pieDimension.group().reduceSum(function (d) { return d.userCount; })
@@ -200,14 +181,13 @@
 			var average = function (d) {
 				return d.n ? d.tot / d.n : 0;
 			};
-
+			
+			// var timeDimension = facts.dimension(function(d){ return d.hour});
 
 			//devices chart
 			var pie = dc.pieChart("#pie")
-				.width(300)
-				.height(260)
-				.cx(150)
-				.cy(130)
+				.width(250)
+				.height(250)
 				.title(function (d) { return d.key + ': ' + (Math.round((d.value / userTotal) * 100)) + '%' })
 				.dimension(pieDimension)
 				.group(pieGroup)
@@ -219,8 +199,7 @@
 			//channel chart
 			var ch = dc.barChart("#bar")
 				.width(300)
-				.height(260)
-				.margins({top: 10, right: 0, bottom: 30, left: 50})
+				.height(300)
 				.dimension(chDimension)
 				.group(chGroup)
 				.title(function (d) { return d.key + ': #' + d.value + ' orders' })
@@ -230,11 +209,11 @@
 				.yAxisLabel("Total Orders")
 				.colors(d3.scale.category10()) //d3 color
 				.transitionDuration(1500)
-				;
+				.margins({ top: 50, bottom: 50, left: 60, right: 10 });
 
 			//day of week chart
 			var dow = dc.barChart("#dow")
-				.width(300)
+				.width(500)
 				.height(300)
 				.dimension(dowDimension)
 				.group(dowGroup)
@@ -268,24 +247,24 @@
 			var geo1 = dc.geoChoroplethChart("#geo")
 			//Geo chart
 			d3.json('world_geo.json', function (err1, stateData) {
-				var projection = d3.geo.mercator().scale(120).translate([400, 200]).rotate([-12, 0]);
+				var projection = d3.geo.mercator().scale(120).translate([400, 200]).rotate([-12,0]);
 				geo1
-					.width(625)
+					.width(600)
 					.height(300)
 					.dimension(countryDimension)
 					.group(countryGroup)
 					.projection(projection)
-
-					.colors(d3.scale.category10())
-					.colorDomain([0, 3])
-					.colorCalculator(function (d) { return d ? geo1.colors()(d) : '#ccc' })
-					.overlayGeoJson(stateData.features, 'state', function (d) {
-						return d.properties.name
-					})
-					.legend(dc.legend().x(400).y(10).itemHeight(13).gap(5));
-				dc.renderAll();
-			});
+					
+				.colors(d3.scale.category10())
+				.colorDomain([0, 3])
+				.colorCalculator(function (d) { return d ? geo1.colors()(d) : '#ccc' })
+				.overlayGeoJson(stateData.features, 'state', function (d) {
+					return d.properties.name
+				})
+				.legend(dc.legend().x(400).y(10).itemHeight(13).gap(5));
 			dc.renderAll();
+		});
+		dc.renderAll();
 
 		});
 	</script>
