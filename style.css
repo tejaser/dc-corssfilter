@@ -16,6 +16,20 @@
     text-anchor: end !important;
     transform: rotate(-45deg);
 }
+#bar .x.axis text {
+  text-anchor: end !important;
+  transform: rotate(-25deg);
+}
 .mh{
     max-height: 410px !important;
+}
+.minh{
+  min-height: 355px !important;
+}
+.font{
+  font-size:12px;
+}
+
+.font2{
+  font-size:14px;
 }

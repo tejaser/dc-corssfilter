@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="./dc.css" />
 	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -30,7 +31,7 @@
 			<ul class="navbar-nav my-2 my-lg-0 text-right">
 				<li class="nav-item">
 					<p class="font-weight-bold mb-0">
-						<span class="fa fa-calendar" style="color: #F58120"></span>&nbsp; March, 2018</p>
+						<span class="fa fa-calendar" style="color: #F58120"></span>&nbsp; <span id="month"></span></p>
 					</b>
 					<p class="font-weight-light t">All data is based on last click by customer</p>
 				</li>
@@ -39,68 +40,79 @@
 	</nav>
 
 	<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- <div id="month" class="float-left"></div> -->
+					<a class="float-right"
+					href="javascript:dc.filterAll(); dc.renderAll();"
+					>Reset All</a>
+				</div>
+			</div>
 		<div class="row mt-2">
 			<div class="col-md-3 font-weight-bold mt-lg-0 mt-3  pr-2 pl-2 pl-lg-3 mh">
 				<div class="col-12 lxr-box-shadow py-3 p-0">
-					<h4 class="font-weight-normal text-uppercase ml-3">Persona</h4>
-					<p class="font-weight-light ml-3">high-value Person your business </p>
+					<h6 class="font-weight-normal text-uppercase ml-3">Persona</h6>					
+					<p class="font-weight-light ml-3 font" >high-value Persona for your business </p>
 					<div class="text-center">
-							<img src="./lady.svg" width="180" height="180"/></br>
-							<b>Sidney</b></br>
-							<b class="font-weight-light">Age: 25-35</b></br>
-							<b>United States of America</b>
-					</div> 
+						<img src="./lady.svg" width="180" height="180" />
+						</br>
+						<b>Sidney</b>
+						</br>
+						<b class="font-weight-light">Age: 25-35</b>
+						</br>
+						<b>United States of America</b>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-3 mt-lg-0 mt-3  pr-2 pl-2 pl-lg-3 mh">
-				<div class="col-12 lxr-box-shadow py-3 p-0">
-						<div class="font-weight-bold">
-							<h4 class="font-weight-normal text-uppercase ml-3">Key Takeaways</h4>
-							<p class="font-weight-light ml-3">by high-value Person </p>
-						</div>
-					<div class="card-body">	
-						<p>Her monthly purchases are above $50. (Contributes up to 70% of total revenue)</p>
+			<div class="col-md-3 mt-lg-0 mt-3  pr-2 pl-2 pl-lg-3 mh minh ">
+				<div class="col-12 lxr-box-shadow py-3 p-0 minh">
+					<div class="font-weight-bold">
+						<h6 class="font-weight-normal text-uppercase ml-3">Key Takeaways</h6>
+						<p class="font-weight-light ml-3 font">by high-value Persona </p>
+					</div>
+					<div class="card-body ">
+						<p class="font2"><i class="fa fa-eye" aria-hidden="true"></i> Her monthly purchases are above $50. (Contributes up to 70% of total revenue)</p>
 						<!-- <p>She visits the website 2-3 times a month.</p> -->
-						<p>Her bag value amounts to $
+						<p class="font2"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Her bag value amounts to $
 							<span id="bag"></span> approx.</p>
 						<!-- <p>She's most likely to buy between 10AM - 12PM.</p> -->
-						<p>Her chance of buying from Paid search campaign is
+						<p class="font2"><i class="fa fa-bullhorn" aria-hidden="true"></i> Her chance of buying from Paid search campaign is
 							<span id="deskPaid"></span>%.</p>
 						<!-- <p>She has 51.64% chance of buying on a Monday.</p> -->
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh" >
+			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh">
 				<div class="col-12 lxr-box-shadow py-3 p-0" id="pie">
-					<h4 class="font-weight-normal text-uppercase ml-3">Devices</h4>
-					<p class="font-weight-light ml-3">by number of Users </p>
-					
+					<h6 class="font-weight-normal text-uppercase ml-3">Devices</h6>
+					<p class="font-weight-light ml-3 font">by number of Users </p>
+
 				</div>
 			</div>
-			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh" >
+			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh">
 				<div class="col-12 lxr-box-shadow py-3 p-0" id="bar">
-					<h4 class="font-weight-normal text-uppercase ml-3">Channels</h4>
-					<p class="font-weight-light ml-3">by number of Orders </p>						
+					<h6 class="font-weight-normal text-uppercase ml-3">Channels</h6>
+					<p class="font-weight-light ml-3 font">by number of Orders </p>
 				</div>
-			</div>			
+			</div>
 		</div>
 		<div class="row mt-3">
-			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh" >
+			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh">
 				<div class="col-12 lxr-box-shadow py-3 p-0" id="dow">
-					<h4 class="font-weight-normal text-uppercase ml-3">Day of Week</h4>
-					<p class="font-weight-light ml-3">by number of Orders </p>
-				</div>				
-			</div>
-			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh" >
-					<div class="col-12 lxr-box-shadow py-3 p-0" id="">
-						<h4 class="font-weight-normal text-uppercase ml-3">Hour of Day</h4>
-						<p class="font-weight-light ml-3">by number of Orders </p>
-					</div>				
+					<h6 class="font-weight-normal text-uppercase ml-3">Day of Week</h6>
+					<p class="font-weight-light ml-3 font">by number of Orders </p>
 				</div>
-			<div class="col-md-6 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh"  >
+			</div>
+			<div class="col-md-3 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh">
+				<div class="col-12 lxr-box-shadow py-3 p-0" id="hod">
+					<h6 class="font-weight-normal text-uppercase ml-3">Hour of Day</h6>
+					<p class="font-weight-light ml-3 font">by number of Orders </p>
+				</div>
+			</div>
+			<div class="col-md-6 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh">
 				<div class="col-12 lxr-box-shadow py-3 p-0" id="geo">
-					<h4 class="font-weight-normal text-uppercase ml-3">Geo Location</h4>
-					<p class="font-weight-light ml-3">by number of Users </p>
+					<h6 class="font-weight-normal text-uppercase ml-3">Geo Location</h6>
+					<p class="font-weight-light ml-3 font">by number of Users </p>
 				</div>
 			</div>
 		</div>
@@ -110,7 +122,8 @@
 
 	<script type="text/javascript" src="./d3.js"></script>
 	<script type="text/javascript" src="./crossfilter.js"></script>
-	<script type="text/javascript" src="./dc.js"></script>
+	<!-- <script type="text/javascript" src="./dc.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0-dev/dc.js"></script>
 	<script type="text/javascript" src="./colorbrewer.js"></script>
 	<script type="text/javascript">
 
@@ -126,8 +139,8 @@
 
 
 		//new data and new graphs
-		d3.json('orders-data-3.json', function (err, data) {
-			console.log(data)
+		d3.json('order-data-3.json', function (err, data) {
+			// console.log(data)
 			var facts = crossfilter(data)
 			var all = facts.groupAll();
 			var userTotal = all.reduceSum(function (d) { return d.userCount; }).value();
@@ -149,6 +162,16 @@
 			var countryDimension = facts.dimension(function (d) { return d.countryName; })
 			var countryGroup = countryDimension.group().reduceSum(function (d) { return d.userCount; })
 
+			//hour of day
+			var dateDimension = facts.dimension(function (d) { return d.hour; })
+			var dateGroup = dateDimension.group().reduceSum(function (d) { return d.orderCount; })
+			print_filter(dateGroup)
+		
+			//Month data
+			var monthDimension = facts.dimension(function(d){ return d.month;})
+			var monthGroup = monthDimension.group();
+			
+			// print_filter(monthGroup)
 			//desktop
 			var deskGroup = facts.groupAll().reduce(
 				function (p, c) {
@@ -211,7 +234,7 @@
 				.title(function (d) { return d.key + ': ' + (Math.round((d.value / userTotal) * 100)) + '%' })
 				.dimension(pieDimension)
 				.group(pieGroup)
-				.legend(dc.legend()) //default legend for moving in particular direction x y itemHeight gap can be given
+				.legend(dc.legend().x(10).y(5)) //default legend for moving in particular direction x y itemHeight gap can be given
 				.innerRadius(70) //for donut chart 
 				.colors(d3.scale.category10()) //d3 color
 				.transitionDuration(1500);
@@ -220,18 +243,19 @@
 			var ch = dc.barChart("#bar")
 				.width(300)
 				.height(260)
-				.margins({top: 10, right: 0, bottom: 30, left: 50})
+				.margins({ top: 10, right: 0, bottom: 40, left: 50 })
 				.dimension(chDimension)
 				.group(chGroup)
 				.title(function (d) { return d.key + ': #' + d.value + ' orders' })
 				.x(d3.scale.ordinal().domain(['Organic', 'Google', 'Facebook', 'Bing', 'Yahoo']))
 				.xUnits(dc.units.ordinal)
-				.xAxisLabel("Channel")
-				.yAxisLabel("Total Orders")
-				.colors(d3.scale.category10()) //d3 color
-				.transitionDuration(1500)
-				;
-
+				// .xAxisLabel("Channel")
+				// .yAxisLabel("Total Orders")
+				.xAxisPadding(500)
+				.transitionDuration(1500);
+			ch.xAxis().tickFormat(function(v) {  if (v !== 'Organic') { return v + ' Ads'} else {return v}});
+			
+			
 			//day of week chart
 			var dow = dc.barChart("#dow")
 				.width(300)
@@ -241,12 +265,28 @@
 				.title(function (d) { return d.key + ': #' + d.value + ' orders' })
 				.x(d3.scale.ordinal().domain(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']))
 				.xUnits(dc.units.ordinal)
-				.xAxisLabel("Day of Week")
-				.yAxisLabel("Total Orders")
+				// .xAxisLabel("Day of Week")
+				// .yAxisLabel("Total Orders")
 				.colors(d3.scale.category10()) //d3 color
 				.transitionDuration(1500)
-				.margins({ top: 50, bottom: 50, left: 60, right: 10 });
+				.margins({ top: 10, right: 0, bottom: 40, left: 50 })
 
+			//hour of day
+			var msPerHour = 1000*60*60;
+			var timeFormat = d3.time.format.utc("%H:%M");
+			var hod = dc.lineChart('#hod')
+				.width(300)
+				.height(300)				
+				.dimension(dateDimension)
+				.group(dateGroup)
+				.renderArea(true)
+				// .xAxisLabel("Hour of Day")
+				// .yAxisLabel('Total Orders')
+				.x(d3.scale.linear().domain([0,24]))
+				.margins({ top: 10, right: 0, bottom: 40, left: 50 })
+				.xAxis().tickFormat(function(h){return h + ":00";}).ticks(4);
+				
+			
 			//avg. bag value
 			var visits = dc.numberDisplay("#bag")
 				.formatNumber(d3.format(".3s"))
@@ -264,11 +304,21 @@
 				.formatNumber(d3.format(".3n"))
 				.valueAccessor(mobAverage)
 				.group(mobGroup);
+			
+			//month select
+			var monthSelect = dc.selectMenu('#month')
+				.dimension(monthDimension)
+				.group(monthDimension.group())
+				.controlsUseVisibility(true);
+				monthSelect.title(function (d){
+    				return  d.key + ', 2018';
+				})
 
+			
 			var geo1 = dc.geoChoroplethChart("#geo")
 			//Geo chart
 			d3.json('world_geo.json', function (err1, stateData) {
-				var projection = d3.geo.mercator().scale(120).translate([400, 200]).rotate([-12, 0]);
+				var projection = d3.geo.mercator().scale(75).translate([325, 150]).rotate([-12, 0]);
 				geo1
 					.width(625)
 					.height(300)
