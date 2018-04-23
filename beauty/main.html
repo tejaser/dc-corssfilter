@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Latency Report</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../dc.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="/">
+            <img src="../logo.png" alt="insights">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                            <a class="nav-link" href="" target="blank">
+                               <h5>Beauty and Cosmetics</h5>
+                                <!-- <img src="https://elfukcdn.azureedge.net/images/gallery/e.l.f.logo.svg" alt="Elf Cosmetics" width="110" height="50"> -->
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+            </ul>
+            <ul class="navbar-nav my-2 my-lg-0 text-right">
+                <!-- <li class="nav-item">
+                            <p class="font-weight-bold mb-0">
+                                <span class="fa fa-calendar" style="color: #F58120"></span>&nbsp;
+                                <span id="month"></span>
+                            </p>
+                            </b>
+                            <p class="font-weight-light t">All data is based on Pacific Timezone </p>
+                        </li> -->
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                    <a class="float-left allClear" href="../beauty/index.html">go back</a>
+                <a class="float-right allClear" href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 font-weight-bold mt-lg-0 mt-3  pr-2 pl-2 pl-lg-3 mh ">
+                <div class="col-12 lxr-box-shadow py-3 p-0 minh" id="firstDevice">
+                    <h6 class="font-weight-normal text-uppercase ml-3">First Click Device</h6>
+                    <p class="font-weight-light ml-3 font">by first click </p>
+                </div>
+            </div>
+            <div class="col-md-4 font-weight-bold mt-lg-0 mt-3  pr-2 pl-2 pl-lg-3 mh ">
+                <div class="col-12 lxr-box-shadow py-3 p-0 minh" id="convDevice">
+                    <h6 class="font-weight-normal text-uppercase ml-3">Conversion Click Device</h6>
+                    <p class="font-weight-light ml-3 font">by last click </p>
+
+                </div>
+            </div>
+            <div class="col-md-4 font-weight-bold mt-lg-0 mt-3  pr-2 pl-2 pl-lg-3 mh ">
+                <div class="col-12 lxr-box-shadow py-3 p-0 minh" id="dow">
+                    <h6 class="font-weight-normal text-uppercase ml-3">Day of Week</h6>
+                    <p class="font-weight-light ml-3 font">by last click revenue </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh">
+                <div class="col-12 lxr-box-shadow py-3 p-0" id="firstHour">
+                    <h6 class="font-weight-normal text-uppercase ml-3">Hour of Day</h6>
+                    <p class="font-weight-light ml-3 font">by first click and item count </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-lg-0 mt-3 pr-2 pl-2 pl-lg-3 mh">
+                <div class="col-12 lxr-box-shadow py-3 p-0" id="convHour">
+                    <h6 class="font-weight-normal text-uppercase ml-3">Hour of Day</h6>
+                    <p class="font-weight-light ml-3 font">by conversion click and item count </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12 font-weight-bold mt-lg-0 mt-3  pr-2 pl-2 pl-lg-3 mh ">
+                <div class="col-12 lxr-box-shadow py-3 p-0 minh" id="tDiff">
+                    <h6 class="font-weight-normal text-uppercase ml-3">Latency</h6>
+                    <p class="font-weight-light ml-3 font">by last click revenue </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../d3.js"></script>
+    <script type="text/javascript" src="../crossfilter.js"></script>
+    <!-- <script type="text/javascript" src="./dc.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0-dev/dc.js"></script>
+    <script type="text/javascript" src="../colorbrewer.js"></script>
+    <script type="text/javascript">
+function print_filter(filter) {
+  var f = eval(filter);
+  if (typeof f.length != 'undefined') {
+  } else {
+  }
+  if (typeof f.top != 'undefined') {
+    f = f.top(Infinity);
+  } else {
+  }
+  if (typeof f.dimension != 'undefined') {
+    f = f
+      .dimension(function(d) {
+        return '';
+      })
+      .top(Infinity);
+  } else {
+  }
+  console.log(
+    filter +
+      '(' +
+      f.length +
+      ') = ' +
+      JSON.stringify(f)
+        .replace('[', '[\n\t')
+        .replace(/}\,/g, '},\n\t')
+        .replace(']', '\n]')
+  );
+}
+
+d3.json('latency.json', function(err, data) {
+  // console.log(data)
+  data.forEach(function(d) {
+    d.firstClickHour = d.firstClickHour <= 16 ? d.firstClickHour + 7 : d.firstClickHour - 17;
+    d.convTimeHour = d.convTimeHour <= 16 ? d.convTimeHour + 7 : d.convTimeHour - 17;
+  });
+  var facts = crossfilter(data);
+  var all = facts.groupAll();
+  var itemTotal = all
+    .reduceSum(function(d) {
+      return d.itemsCount;
+    })
+    .value();
+
+  //first Click Device
+  var firstClickDim = facts.dimension(function(d) {
+    return d.firstClickDevice;
+  });
+  var firstClickGrp = firstClickDim.group().reduceSum(function(d) {
+    return d.itemsCount;
+  });
+
+  //conversion Click Device
+  var convClickDim = facts.dimension(function(d) {
+    return d.convDevice;
+  });
+  var convClickGrp = convClickDim.group().reduceSum(function(d) {
+    return d.itemsCount;
+  });
+
+  //first hour
+  var firstHourDim = facts.dimension(function(d) {
+    return [d.firstClickSource, +d.firstClickHour];
+  });
+  var firstHourGrp = firstHourDim.group().reduceSum(function(d) {
+    return +d.itemsCount;
+  });
+
+  //conversion hour
+  var convHourDim = facts.dimension(function(d) {
+    return [d.convSource, +d.convTimeHour];
+  });
+  var convHourGrp = convHourDim.group().reduceSum(function(d) {
+    return +d.itemsCount;
+  });
+
+  //day of week
+  var dowDim = facts.dimension(function(d) {
+    return d.day;
+  });
+  var dowGrp = dowDim.group().reduceSum(function(d) {
+    return d.price;
+  });
+
+  //day of week
+  var tDiffDim = facts.dimension(function(d) {
+    return d.rDiff;
+  });
+  var tDiffGrp = tDiffDim.group().reduceSum(function(d) {
+    return d.price;
+  });
+
+  //first click device
+  var fisrtDevPie = dc
+    .pieChart('#firstDevice')
+    .width(350)
+    .height(260)
+    .cx(200)
+    .cy(130)
+    .title(function(d) {
+      return d.key + ': ' + Math.round(d.value / itemTotal * 100) + '%';
+    })
+    .dimension(firstClickDim)
+    .group(firstClickGrp)
+    .legend(
+      dc
+        .legend()
+        .x(10)
+        .y(5)
+    ) //default legend for moving in particular direction x y itemHeight gap can be given
+    .innerRadius(70) //for donut chart
+    .colors(d3.scale.category10()) //d3 color
+    .transitionDuration(1500)
+    .controlsUseVisibility(true);
+
+  //conversion click device
+  var convDevPie = dc
+    .pieChart('#convDevice')
+    .width(350)
+    .height(260)
+    .cx(200)
+    .cy(130)
+    .title(function(d) {
+      return d.key + ': ' + Math.round(d.value / itemTotal * 100) + '%';
+    })
+    .dimension(convClickDim)
+    .group(convClickGrp)
+    .legend(
+      dc
+        .legend()
+        .x(10)
+        .y(5)
+    ) //default legend for moving in particular direction x y itemHeight gap can be given
+    .innerRadius(70) //for donut chart
+    .colors(d3.scale.category10()) //d3 color
+    .transitionDuration(1500)
+    .controlsUseVisibility(true);
+
+  //first  hour
+  var firstHour = dc
+    .seriesChart('#firstHour')
+    .width(640)
+    .height(250)
+    .chart(function(c) {
+      return dc.lineChart(c).interpolate('cardinal');
+    })
+    .x(d3.scale.linear().domain([0, 23]))
+    .brushOn(false)
+    .yAxisLabel('Items Count')
+    .xAxisLabel('Hour of Day')
+    .clipPadding(10)
+    .elasticY(true)
+    .dimension(firstHourDim)
+    .group(firstHourGrp)
+    // .mouseZoomable(true)
+    .seriesAccessor(function(d) {
+      return d.key[0];
+    })
+    .keyAccessor(function(d) {
+      return +d.key[1];
+    })
+    .valueAccessor(function(d) {
+      return +d.value;
+    })
+    .transitionDuration(1500)
+    .legend(
+      dc
+        .legend()
+        .x(200)
+        .y(20)
+        .itemHeight(13)
+        .gap(5)
+        .legendWidth(140)
+        .itemWidth(70)
+    );
+  // hour.yAxis().tickFormat(function (d) { return d3.format(',d'); });
+  firstHour.margins().left += 40;
+
+  //conv hour
+  var convHour = dc
+    .seriesChart('#convHour')
+    .width(640)
+    .height(250)
+    .chart(function(c) {
+      return dc.lineChart(c).interpolate('cardinal');
+    })
+    .x(d3.scale.linear().domain([0, 23]))
+    .brushOn(false)
+    .yAxisLabel('Items Count')
+    .xAxisLabel('Hour of Day')
+    .clipPadding(10)
+    .elasticY(true)
+    .dimension(convHourDim)
+    .group(convHourGrp)
+    // .mouseZoomable(true)
+    .seriesAccessor(function(d) {
+      return d.key[0];
+    })
+    .keyAccessor(function(d) {
+      return +d.key[1];
+    })
+    .valueAccessor(function(d) {
+      return +d.value;
+    })
+    .transitionDuration(1500)
+    .legend(
+      dc
+        .legend()
+        .x(200)
+        .y(20)
+        .itemHeight(13)
+        .gap(5)
+        .legendWidth(140)
+        .itemWidth(70)
+    );
+  // hour.yAxis().tickFormat(function (d) { return d3.format(',d'); });
+  convHour.margins().left += 40;
+
+  //day of week
+  var dow = dc
+    .barChart('#dow')
+    .width(400)
+    .height(260)
+    .dimension(dowDim)
+    .group(dowGrp)
+    .title(function(d) {
+      return d.key + ': $' + Math.ceil(d.value) + ' revenue';
+    })
+    .x(d3.scale.ordinal().domain(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']))
+    .xUnits(dc.units.ordinal)
+    // .xAxisLabel("Day of Week")
+    .yAxisLabel('Total Revenue')
+    .elasticY(true)
+    .colors(d3.scale.category10()) //d3 color
+    .transitionDuration(1500)
+    .margins({ top: 50, bottom: 50, left: 60, right: 10 });
+
+  //time difference
+  var tDiff = dc
+    .barChart('#tDiff')
+    .width(1280)
+    .height(260)
+    .dimension(tDiffDim)
+    .group(tDiffGrp)
+    .title(function(d) {
+      return d.key + ': $' + Math.ceil(d.value) + ' revenue';
+    })
+    .x(d3.scale.linear().domain([0, 21]))
+    // .xUnits(dc.units.ordinal)
+    // .xAxisLabel("Day of Week")
+    .yAxisLabel('Total Revenue')
+    .elasticY(true)
+    .colors(d3.scale.category10()) //d3 color
+    .transitionDuration(1500)
+    .margins({ top: 50, bottom: 50, left: 60, right: 10 });
+
+  dc.renderAll();
+});
+</script>
+
+</body>
+
+</html>
