@@ -106,7 +106,7 @@
 					<h6 class="font-weight-normal text-uppercase ml-3">High Value Persona</h6>
 					<p class="font-weight-light ml-3 font">high-value Persona for your business </p>
 					<div class="text-center">
-						<img src="../lady.svg" width="180" height="180" />
+						<img src="../lady1.png" width="180" height="180" />
 						</br>
 						<b>Amy</b>
 						</br>
@@ -125,7 +125,7 @@
 					<div class="card-body ">
 						<p class="font2">
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i> Her average bag value amounts to $190</p>
-						<p class="font2" ><i class="fa fa-car" aria-hidden="true"></i>She visits the website an average of 1-2 times per month.</p>
+						<p class="font2" ><i class="fa fa-car" aria-hidden="true"></i>She visits the website an average of 1.9 times per month.</p>
 						<p class="font2">
 							<i class="fa fa-shopping-bag" aria-hidden="true"></i> Her average spend amounts to $
 							<span id="bag"></span>
@@ -225,7 +225,7 @@
 			// print_filter(dateGroup)
 
 			//Month data
-			var monthDimension = facts.dimension(function (d) { return [d.month, d.year]; })
+			var monthDimension = facts.dimension(function (d) { return [d.month + " "+ d.year]; })
 			var monthGroup = monthDimension.group();
 
 			// print_filter(monthGroup)
